@@ -1,0 +1,53 @@
+{
+	"name": "project",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"eslint": "eslint \"**/*.+(js|jsx|ts|tsx)\"",
+		"eslint:fix": "eslint --fix \"**/*.+(js|jsx|ts|tsx)\"",
+		"prettier": "prettier --check \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
+		"prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\""
+	},
+	"dependencies": {
+		"next": "^15.1.6",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"sharp": "^0.33.5"
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.2.5",
+		"@eslint/eslintrc": "^3.2.0",
+		"@eslint/js": "^9.19.0",
+		"@svgr/webpack": "^8.1.0",
+		"@tailwindcss/postcss": "^4.0.0",
+		"autoprefixer": "^10.4.20",
+		"cssnano": "^7.0.6",
+		"eslint": "^9.19.0",
+		"eslint-config-next": "^15.1.6",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-prettier": "^5.2.3",
+		"eslint-plugin-react": "^7.37.4",
+		"eslint-plugin-react-hooks": "^5.1.0",
+		"globals": "^15.14.0",
+		"postcss": "^8.5.1",
+		"postcss-flexbugs-fixes": "^5.0.2",
+		"postcss-preset-env": "^10.1.3",
+		"prettier": "^3.4.2",
+		"prettier-plugin-merge": "^0.7.2",
+		"prettier-plugin-tailwindcss": "^0.6.11",
+		"tailwindcss": "^4.0.0"
+	},
+	"browserslist": [
+		"last 8 versions",
+		"> 0.1%",
+		"Safari 9",
+		"Chrome >= 49",
+		"Firefox >= 45",
+		"Edge >= 12",
+		"IE 11"
+	]
+}
