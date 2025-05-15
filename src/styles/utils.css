@@ -1,0 +1,84 @@
+.hidden-opacity {
+	z-index: -1;
+	pointer-events: none;
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		opacity 0.3s,
+		visibility 0.3s 0.3s,
+		z-index 0.3s 0.3s;
+	&.opened {
+		opacity: 1;
+		z-index: 20;
+		pointer-events: unset;
+		transition:
+			opacity 0.3s,
+			visibility 0s,
+			z-index 0s;
+	}
+}
+
+@media(max-width: 767px) {
+	.mobile-menu {
+		position: absolute;
+		overflow: hidden;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 0;
+		@apply transition-[height] ease-in duration-300;
+		&.opened {
+			height: 100vh;
+			height: 100dvh;
+			@media (max-height: 320px) {
+				overflow-y: scroll;
+			}
+		}
+	}	
+	.modal-opened-mobile {
+		overflow: hidden;
+	}
+}
+
+.plus {
+	display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  position: relative;
+	@apply transition-[transform,background-color] duration-300;
+}
+
+.plus::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  background-color: #000;
+	@apply transition-[transform,background-color] duration-300;
+}
+
+.plus::after {
+  transform: rotate(90deg);
+}
+
+.accordion-opened {
+  .plus {
+    transform: rotate(45deg);
+		background: #fff;
+		&::after {
+			background: #fff;			
+		}
+  }
+	.plus-bg {
+		opacity: 1;
+	}
+  h3 {
+    color: #000;
+  }
+  .accordion {
+    height: auto;
+    margin-top: 0.25rem;
+  }
+}

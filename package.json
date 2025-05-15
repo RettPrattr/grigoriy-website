@@ -10,12 +10,13 @@
 		"eslint": "eslint \"**/*.+(js|jsx|ts|tsx)\"",
 		"eslint:fix": "eslint --fix \"**/*.+(js|jsx|ts|tsx)\"",
 		"prettier": "prettier --check \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
-		"prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\""
+		"prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
+		"test-api": "node -r dotenv/config src/utils/test-api.js"
 	},
 	"dependencies": {
-		"next": "^15.1.6",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
+		"next": "^14.2.16",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
 		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
@@ -26,6 +27,7 @@
 		"@tailwindcss/postcss": "^4.0.0",
 		"autoprefixer": "^10.4.20",
 		"cssnano": "^7.0.6",
+		"dotenv": "^16.5.0",
 		"eslint": "^9.19.0",
 		"eslint-config-next": "^15.1.6",
 		"eslint-config-prettier": "^10.0.1",

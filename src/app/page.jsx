@@ -1,19 +1,26 @@
-import BongIcon from 'public/bong.svg'
+import BlockManager from '@/components/block-manager'
+import getContent from '@/utils/server/requests'
+import { notFound } from 'next/navigation'
+import { getCaseCategories } from '@/utils/server/api'
 
-export const revalidate = 7200
+export default async function HomePage() {
+	try {
+		// Получаем данные из Strapi
+		const data = await getContent('index', 'populate=blocks');
+		console.log('Данные главной страницы:', data);
 
-export default function HomePage() {
-	return (
-		<div className='p-4'>
-			<h1 className='text-4xl font-bold'>Next.js 15 Template</h1>
-			<ul className='mt-4 list-inside list-disc text-lg'>
-				<li>TailwindCSS 4.0</li>
-				<li>ESLint + Prettier</li>
-				<li>Postcss</li>
-				<li>
-					SVGR <BongIcon className='inline size-7' />
-				</li>
-			</ul>
-		</div>
-	)
+		// Получаем категории для тегов
+		const categories = await getCaseCategories();
+
+		// Проверка на наличие блоков
+		if (!data?.blocks || !Array.isArray(data.blocks) || data.blocks.length === 0) {
+			console.error('Блоки не найдены в данных');
+			notFound(); // Используем 404 страницу
+		}
+		
+		return <BlockManager blocks={data.blocks} categories={categories} />;
+	} catch (error) {
+		console.error('Ошибка загрузки главной страницы:', error);
+		throw error; // Передаем ошибку Next.js для обработки
+	}
 }

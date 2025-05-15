@@ -1,0 +1,93 @@
+/* Специальные стили для содержимого Rich Text компонентов */
+
+.rich-text-content,
+.rich-text-content *,
+.rich-text-wrapper,
+.rich-text-wrapper * {
+  font-family: var(--font-hn, "Helvetica Neue", sans-serif) !important;
+  font-weight: 400 !important;
+}
+
+/* Конкретные элементы */
+.rich-text-p,
+.rich-text-h1,
+.rich-text-h2,
+.rich-text-h3,
+.rich-text-h4,
+.rich-text-h5,
+.rich-text-h6,
+.rich-text-list,
+.rich-text-li,
+.rich-text-quote,
+.rich-text-pre,
+.rich-text-code,
+.rich-text-bold,
+.rich-text-italic,
+.rich-text-underline,
+.rich-text-strikethrough,
+.rich-text-inline-code,
+.rich-text-link {
+  font-family: var(--font-hn, "Helvetica Neue", sans-serif) !important;
+  font-weight: 400 !important;
+}
+
+/* Исключение для жирного текста */
+.rich-text-bold,
+.rich-text-content strong,
+.rich-text-content b {
+  font-weight: 700 !important;
+}
+
+/* Применение к специфическим тегам внутри компонента */
+.rich-text-content p,
+.rich-text-content h1,
+.rich-text-content h2,
+.rich-text-content h3,
+.rich-text-content h4,
+.rich-text-content h5,
+.rich-text-content h6,
+.rich-text-content ul,
+.rich-text-content ol,
+.rich-text-content li,
+.rich-text-content a,
+.rich-text-content blockquote,
+.rich-text-content em,
+.rich-text-content code,
+.rich-text-content pre {
+  font-family: var(--font-hn, "Helvetica Neue", sans-serif) !important;
+  font-weight: 400 !important;
+}
+
+/* Применяем стили ко всем динамически созданным элементам */
+div[class*="richText"],
+div[class*="rich-text"] {
+  font-family: var(--font-hn, "Helvetica Neue", sans-serif) !important;
+  font-weight: 400 !important;
+}
+div[class*="richText"] *,
+div[class*="rich-text"] * {
+  font-family: var(--font-hn, "Helvetica Neue", sans-serif) !important;
+  font-weight: 400 !important;
+}
+
+/* Высший приоритет: правило без класса для любых HTML тегов внутри компонента */
+.rich-text-component * {
+  font-family: var(--font-hn, "Helvetica Neue", sans-serif) !important;
+  font-weight: 400 !important;
+}
+
+/* Исключение для элементов, которые должны оставаться жирными */
+.rich-text-component strong,
+.rich-text-component b,
+.rich-text-component h1,
+.rich-text-component h2,
+.rich-text-component h3 {
+  font-weight: 700 !important;
+}
+
+/* Создаем глобальные CSS переменные для использования в инлайн-стилях */
+:root {
+  --rich-text-font: var(--font-hn, "Helvetica Neue", sans-serif);
+  --rich-text-weight: 400;
+  --rich-text-bold-weight: 700;
+} 

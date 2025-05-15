@@ -4,12 +4,21 @@ const nextConfig = {
 	reactStrictMode: false,
 	images: {
 		remotePatterns: [
-			// {
-			// 	protocol: 'http',
-			// 	hostname: 'localhost',
-			// 	port: '1337'
-			// }
-		]
+			{
+				protocol: 'http',
+				hostname: 'localhost',
+				port: '1337',
+				pathname: '/**'
+			},
+			{
+				protocol: 'http',
+				hostname: '127.0.0.1',
+				port: '1337',
+				pathname: '/**'
+			}
+		],
+		// Добавляем плейсхолдеры для изображений
+		unoptimized: process.env.NODE_ENV !== 'production'
 	},
 	webpack(config) {
 		config.module.rules.push({
